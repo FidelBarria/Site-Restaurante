@@ -16,22 +16,39 @@
     .btn-main:hover { background:#ff5a1f; }
     .section { padding:60px 20px; }
     footer { background:#0f0f0f; padding:20px; text-align:center; border-top:1px solid #222; }
-    h1,h2 { font-weight:bold; }
+
+    .card-food {
+      background:#111;
+      border:1px solid #222;
+      border-radius:15px;
+      overflow:hidden;
+      transition: all 0.3s ease;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-food img {
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card-food .content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .price { color:#ff3c00; font-weight:bold; }
   </style>
 </head>
 
 <body>
 
-<!-- NAVBAR (usar em todas as páginas) -->
 <nav class="navbar navbar-expand-lg">
   <div class="container">
-    <a class="navbar-brand text-white" href="index.html">🍔 Premium Burger</a>
-    <div>
-      <a href="quem-somos.html" class="btn btn-nav">Quem Somos</a>
-      <a href="menu.html" class="btn btn-nav">Menu</a>
-      <a href="fotos.html" class="btn btn-nav">Fotos</a>
-      <a href="endereco.html" class="btn btn-nav">Endereço</a>
-    </div>
+    <a class="navbar-brand text-white" href="#">🍔 Premium Burger</a>
   </div>
 </nav>
 
@@ -41,50 +58,113 @@
   <div class="row g-4">
 
     <!-- ITEM -->
-    <div class="col-md-4 fade-in">
+    <div class="col-md-4">
       <div class="card-food">
         <img src="https://images.unsplash.com/photo-1550547660-d9450f859349" class="w-100">
-        <div class="p-3">
-          <h5>Clássico Premium</h5>
-          <p>Pão brioche, carne 180g, queijo e molho especial</p>
+        <div class="content p-3">
+          <div>
+            <h5>Clássico Premium</h5>
+            <p>Pão brioche, carne 180g, queijo e molho especial</p>
+          </div>
           <div class="d-flex justify-content-between align-items-center">
             <span class="price">R$29</span>
-            <a href="https://wa.me/SEUNUMERO" class="btn btn-main">Pedir</a>
+            <a href="#" class="btn btn-main add-cart" data-name="Clássico Premium" data-price="29">Pedir</a>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="col-md-4 fade-in">
+    <div class="col-md-4">
       <div class="card-food">
         <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd" class="w-100">
-        <div class="p-3">
-          <h5>Bacon Supreme</h5>
-          <p>Carne dupla, bacon crocante e cheddar</p>
+        <div class="content p-3">
+          <div>
+            <h5>Bacon Supreme</h5>
+            <p>Carne dupla, bacon crocante e cheddar</p>
+          </div>
           <div class="d-flex justify-content-between">
             <span class="price">R$35</span>
-            <a href="https://wa.me/SEUNUMERO" class="btn btn-main">Pedir</a>
+            <a href="#" class="btn btn-main add-cart" data-name="Bacon Supreme" data-price="35">Pedir</a>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="col-md-4 fade-in">
+    <div class="col-md-4">
       <div class="card-food">
         <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092" class="w-100">
-        <div class="p-3">
-          <h5>Duplo Especial</h5>
-          <p>Dois hambúrgueres + queijo + molho especial</p>
+        <div class="content p-3">
+          <div>
+            <h5>Duplo Especial</h5>
+            <p>Dois hambúrgueres + queijo + molho especial</p>
+          </div>
           <div class="d-flex justify-content-between">
             <span class="price">R$39</span>
-            <a href="https://wa.me/SEUNUMERO" class="btn btn-main">Pedir</a>
+            <a href="#" class="btn btn-main add-cart" data-name="Duplo Especial" data-price="39">Pedir</a>
           </div>
         </div>
       </div>
     </div>
 
   </div>
+
+  <!-- CARRINHO -->
+  <div class="mt-5">
+    <h3>Carrinho</h3>
+    <ul id="cart-list"></ul>
+    <button class="btn btn-main" onclick="checkout()">Finalizar Pedido</button>
+  </div>
+
 </div>
+
+<script>
+let cart = [];
+
+document.querySelectorAll('.add-cart').forEach(btn => {
+  btn.addEventListener('click', function(e) {
+    e.preventDefault();
+
+    const name = this.dataset.name;
+    const price = this.dataset.price;
+
+    cart.push({ name, price });
+    renderCart();
+  });
+});
+
+function renderCart() {
+  const list = document.getElementById('cart-list');
+  list.innerHTML = '';
+
+  cart.forEach(item => {
+    const li = document.createElement('li');
+    li.innerText = `${item.name} - R$${item.price}`;
+    list.appendChild(li);
+  });
+}
+
+function checkout() {
+  if (cart.length === 0) {
+    alert('Carrinho vazio!');
+    return;
+  }
+
+  const endereco = prompt('Digite seu endereço:');
+
+  let message = '🛒 Pedido:%0A';
+
+  cart.forEach(item => {
+    message += `- ${item.name} (R$${item.price})%0A`;
+  });
+
+  message += `%0A📍 Endereço: ${endereco}`;
+
+  const phone = '5511999999999';
+  const url = `https://wa.me/${phone}?text=${message}`;
+
+  window.open(url, '_blank');
+}
+</script>
 
 </body>
 </html>
