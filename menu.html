@@ -6,113 +6,186 @@
   <title>Hamburgueria Premium</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-  <style>
-    body { background:#0b0b0b; color:#fff; font-family: Arial, sans-serif; }
-    .navbar { background:#0f0f0f; border-bottom:1px solid #222; }
-    .btn-nav { color:#fff; border:1px solid #333; margin-right:10px; }
-    .btn-nav:hover { background:#ff3c00; border-color:#ff3c00; color:#fff; }
-    .btn-main { background:#ff3c00; border:none; }
-    .btn-main:hover { background:#ff5a1f; }
-    .section { padding:60px 20px; }
-    footer { background:#0f0f0f; padding:20px; text-align:center; border-top:1px solid #222; }
-
-    .card-food {
-      background:#111;
-      border:1px solid #222;
-      border-radius:15px;
-      overflow:hidden;
-      transition: all 0.3s ease;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .card-food img {
-      height: 200px;
-      object-fit: cover;
-    }
-
-    .card-food .content {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .price { color:#ff3c00; font-weight:bold; }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-
+<!-- NAVBAR (usar em todas as páginas) -->
 <nav class="navbar navbar-expand-lg">
   <div class="container">
-    <a class="navbar-brand text-white" href="#">🍔 Premium Burger</a>
+    <a class="navbar-brand text-white" href="index.html">🍔 Premium Burger</a>
+    <div>
+      <a href="quem-somos.html" class="btn btn-nav">Quem Somos</a>
+      <a href="menu.html" class="btn btn-nav">Menu</a>
+      <a href="fotos.html" class="btn btn-nav">Fotos</a>
+      <a href="endereco.html" class="btn btn-nav">Endereço</a>
+    </div>
   </div>
 </nav>
 
 <div class="container section">
-  <h1 class="text-center mb-5">Nosso Cardápio</h1>
+  
+ <h1 class="text-center mb-4">Nosso Cardápio</h1>
 
-  <div class="row g-4">
+<!-- MENU DE CATEGORIAS -->
+<div class="text-center mb-5">
+  <a href="#hamburgueres" class="btn btn-nav">🍔 Hambúrgueres</a>
+  <a href="#bebidas" class="btn btn-nav">🥤 Bebidas</a>
+  <a href="#sobremesas" class="btn btn-nav">🍰 Sobremesas</a>
+  <a href="#alcool" class="btn btn-nav">🍺 Alcoólicas</a>
+</div>
 
-    <!-- ITEM -->
-    <div class="col-md-4">
-      <div class="card-food">
-        <img src="https://images.unsplash.com/photo-1550547660-d9450f859349" class="w-100">
-        <div class="content p-3">
-          <div>
-            <h5>Clássico Premium</h5>
-            <p>Pão brioche, carne 180g, queijo e molho especial</p>
-          </div>
-          <div class="d-flex justify-content-between align-items-center">
-            <span class="price">R$29</span>
-            <a href="#" class="btn btn-main add-cart" data-name="Clássico Premium" data-price="29">Pedir</a>
-          </div>
+<!-- HAMBURGUERES -->
+<h2 id="hamburgueres" class="mb-4">🍔 Hambúrgueres</h2>
+<div class="row g-4 mb-5 justify-content-center">
+
+  <div class="col-md-4 col-lg-3">
+    <div class="card-food">
+      <img src="https://images.unsplash.com/photo-1550547660-d9450f859349" class="w-100">
+      <div class="content p-3">
+        <div>
+          <h5>Clássico Premium</h5>
+          <p>Pão brioche, carne 180g e molho especial</p>
+        </div>
+        <div class="d-flex justify-content-between">
+          <span class="price">R$29</span>
+          <a href="#" class="btn btn-main add-cart" data-name="Clássico Premium" data-price="29">Pedir</a>
         </div>
       </div>
     </div>
-
-    <div class="col-md-4">
-      <div class="card-food">
-        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd" class="w-100">
-        <div class="content p-3">
-          <div>
-            <h5>Bacon Supreme</h5>
-            <p>Carne dupla, bacon crocante e cheddar</p>
-          </div>
-          <div class="d-flex justify-content-between">
-            <span class="price">R$35</span>
-            <a href="#" class="btn btn-main add-cart" data-name="Bacon Supreme" data-price="35">Pedir</a>
-          </div>
+  </div>
+    <div class="col-md-4 col-lg-3">
+    <div class="card-food">
+      <img src="https://images.unsplash.com/photo-1550547660-d9450f859349" class="w-100">
+      <div class="content p-3">
+        <div>
+          <h5>Clássico Premium</h5>
+          <p>Pão brioche, carne 180g e molho especial</p>
+        </div>
+        <div class="d-flex justify-content-between">
+          <span class="price">R$29</span>
+          <a href="#" class="btn btn-main add-cart" data-name="Clássico Premium" data-price="29">Pedir</a>
         </div>
       </div>
     </div>
-
-    <div class="col-md-4">
-      <div class="card-food">
-        <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092" class="w-100">
-        <div class="content p-3">
-          <div>
-            <h5>Duplo Especial</h5>
-            <p>Dois hambúrgueres + queijo + molho especial</p>
-          </div>
-          <div class="d-flex justify-content-between">
-            <span class="price">R$39</span>
-            <a href="#" class="btn btn-main add-cart" data-name="Duplo Especial" data-price="39">Pedir</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
   </div>
 
-  <!-- CARRINHO -->
-  <div class="mt-5">
-    <h3>Carrinho</h3>
-    <ul id="cart-list"></ul>
-    <button class="btn btn-main" onclick="checkout()">Finalizar Pedido</button>
+</div>
+
+<!-- BEBIDAS -->
+<h2 id="bebidas" class="mb-4">🥤 Bebidas</h2>
+<div class="row g-4 mb-5 justify-content-center">
+
+  <div class="col-md-4 col-lg-3">
+    <div class="card-food">
+      <img src="https://images.unsplash.com/photo-1551024709-8f23befc6c5a" class="w-100">
+      <div class="content p-3">
+        <div>
+          <h5>Refrigerante</h5>
+          <p>Lata 350ml</p>
+        </div>
+        <div class="d-flex justify-content-between">
+          <span class="price">R$7</span>
+          <a href="#" class="btn btn-main add-cart" data-name="Refrigerante" data-price="7">Pedir</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- SOBREMESAS -->
+<h2 id="sobremesas" class="mb-4">🍰 Sobremesas</h2>
+<div class="row g-4 mb-5 justify-content-center">
+
+  <div class="col-md-4 col-lg-3">
+    <div class="card-food">
+      <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307" class="w-100">
+      <div class="content p-3">
+        <div>
+          <h5>Brownie</h5>
+          <p>Com calda de chocolate</p>
+        </div>
+        <div class="d-flex justify-content-between">
+          <span class="price">R$12</span>
+          <a href="#" class="btn btn-main add-cart" data-name="Brownie" data-price="12">Pedir</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- BEBIDAS ALCOOLICAS -->
+<h2 id="alcool" class="mb-4">🍺 Bebidas Alcoólicas</h2>
+<div class="row g-4 mb-5 justify-content-center">
+
+  <div class="col-md-4 col-lg-3">
+    <div class="card-food">
+      <img src="https://images.unsplash.com/photo-1600891963935-9f6c1d9fbe0d" class="w-100">
+      <div class="content p-3">
+        <div>
+          <h5>Cerveja</h5>
+          <p>Long neck</p>
+        </div>
+        <div class="d-flex justify-content-between">
+          <span class="price">R$10</span>
+          <a href="#" class="btn btn-main add-cart" data-name="Cerveja" data-price="10">Pedir</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- BOTÃO CARRINHO -->
+<div class="cart-float" data-bs-toggle="modal" data-bs-target="#cartModal">
+  🛒
+</div>
+
+<!-- MODAL CARRINHO -->
+<div class="modal fade" id="cartModal">
+  <div class="modal-dialog">
+    <div class="modal-content bg-dark text-white">
+
+      <div class="modal-header">
+        <h5 class="modal-title">Carrinho</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+        <ul id="cart-list"></ul>
+
+        <p class="mt-3"><strong>Total: R$ <span id="total">0</span></strong></p>
+
+        <hr>
+
+        <input type="text" id="nome" class="form-control mb-2" placeholder="Seu nome">
+
+        <select id="pagamento" class="form-control mb-3">
+          <option value="">Forma de pagamento</option>
+          <option>PIX</option>
+          <option>Cartão</option>
+          <option>Dinheiro</option>
+        </select>
+
+        <hr>
+
+        <h6>Endereço</h6>
+        <input type="text" id="cep" class="form-control mb-2" placeholder="Digite seu CEP">
+        <button class="btn btn-secondary mb-3" onclick="buscarCEP()">Buscar CEP</button>
+
+        <input type="text" id="rua" class="form-control mb-2" placeholder="Rua">
+        <input type="text" id="bairro" class="form-control mb-2" placeholder="Bairro">
+        <input type="text" id="cidade" class="form-control mb-2" placeholder="Cidade">
+        <input type="text" id="numero" class="form-control mb-2" placeholder="Número">
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-main" onclick="checkout()">Finalizar Pedido</button>
+      </div>
+
+    </div>
   </div>
 
 </div>
@@ -125,7 +198,7 @@ document.querySelectorAll('.add-cart').forEach(btn => {
     e.preventDefault();
 
     const name = this.dataset.name;
-    const price = this.dataset.price;
+    const price = Number(this.dataset.price);
 
     cart.push({ name, price });
     renderCart();
@@ -134,22 +207,48 @@ document.querySelectorAll('.add-cart').forEach(btn => {
 
 function renderCart() {
   const list = document.getElementById('cart-list');
+  const totalEl = document.getElementById('total');
   list.innerHTML = '';
 
+  let total = 0;
+
   cart.forEach(item => {
+    total += Number(item.price);
+
     const li = document.createElement('li');
     li.innerText = `${item.name} - R$${item.price}`;
     list.appendChild(li);
   });
+
+  totalEl.innerText = total;
+}
+
+async function buscarCEP() {
+  const cep = document.getElementById('cep').value.replace(/\D/g, '');
+
+  if (!cep) return alert('Digite um CEP válido');
+
+  const res = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
+  const data = await res.json();
+
+  if (data.erro) return alert('CEP não encontrado');
+
+  document.getElementById('rua').value = data.logradouro;
+  document.getElementById('bairro').value = data.bairro;
+  document.getElementById('cidade').value = data.localidade;
 }
 
 function checkout() {
-  if (cart.length === 0) {
-    alert('Carrinho vazio!');
-    return;
-  }
+  if (cart.length === 0) return alert('Carrinho vazio');
 
-  const endereco = prompt('Digite seu endereço:');
+  const nome = document.getElementById('nome').value;
+  const pagamento = document.getElementById('pagamento').value;
+  const rua = document.getElementById('rua').value;
+  const bairro = document.getElementById('bairro').value;
+  const cidade = document.getElementById('cidade').value;
+  const numero = document.getElementById('numero').value;
+
+  let total = cart.reduce((sum, item) => sum + Number(item.price), 0);
 
   let message = '🛒 Pedido:%0A';
 
@@ -157,9 +256,12 @@ function checkout() {
     message += `- ${item.name} (R$${item.price})%0A`;
   });
 
-  message += `%0A📍 Endereço: ${endereco}`;
+  message += `%0A💰 Total: R$${total}`;
+  message += `%0A👤 Nome: ${nome}`;
+  message += `%0A💳 Pagamento: ${pagamento}`;
+  message += `%0A📍 Endereço:%0A${rua}, ${numero} - ${bairro} - ${cidade}`;
 
-  const phone = '5511999999999';
+  const phone = '5562992865365';
   const url = `https://wa.me/${phone}?text=${message}`;
 
   window.open(url, '_blank');

@@ -1,0 +1,63 @@
+body { background:#0b0b0b; color:#fff; font-family: Arial, sans-serif; }
+
+.navbar { background:#0f0f0f; border-bottom:1px solid #222; }
+
+.btn-nav { color:#fff; border:1px solid #333; margin-right:10px; }
+
+.btn-nav:hover { background:#ff3c00; border-color:#ff3c00; color:#fff; }
+
+.btn-main { background:#ff3c00; border:none; }
+.btn-main:hover { background:#ff5a1f; }
+
+.section { padding:60px 20px; }
+footer { background:#0f0f0f; padding:20px; text-align:center; border-top:1px solid #222; }
+
+.card-food {
+  background:#111;
+  border:1px solid #222;
+  border-radius:15px;
+  overflow:hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-food img {
+  height:200px;
+  object-fit:cover;
+}
+
+.card-food .content {
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+
+.price {
+  color:#ff3c00;
+  font-weight:bold;
+}
+
+/* BOTÃO FLUTUANTE */
+.cart-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #ff3c00;
+  color: #fff;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 999;
+}
+
+/* SCROLL SUAVE */
+html {
+  scroll-behavior: smooth;
+}
